@@ -24,6 +24,6 @@ module.exports = async (client, member) => {
 
     const ogRole = await member.guild.roles.cache.find(role => role.id === "902673373858000947");
 
-    if(profile.serverID && profile.serverID !== "874725401669296158") return;
+    if(profile && profile.serverID !== "874725401669296158") return;
     await member.roles.add(ogRole);
 }
