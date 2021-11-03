@@ -10,7 +10,9 @@ module.exports = async (client, member) => {
                 userID: member.id,
                 serverID: member.guild.id,
                 apexName: `noAccLinked`,
-                apexPlatform: `noAccLinked`
+                apexPlatform: `noAccLinked`,
+                osuID: `noAccLinked`,
+                osuMode: 0
             });
             profile.save();
         }
@@ -22,6 +24,6 @@ module.exports = async (client, member) => {
 
     const ogRole = await member.guild.roles.cache.find(role => role.id === "902673373858000947");
 
-    if(profile.serverID !== "874725401669296158") return;
+    if(profile.serverID && profile.serverID !== "874725401669296158") return;
     await member.roles.add(ogRole);
 }

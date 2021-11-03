@@ -17,7 +17,9 @@ module.exports = async (client, message) => {
                 userID: message.author.id,
                 serverID: message.guild.id,
                 apexName: `noAccLinked`,
-                apexPlatform: `noAccLinked`
+                apexPlatform: `noAccLinked`,
+                osuID: `noAccLinked`,
+                osuMode: 0
             });
             profile.save();
         }
