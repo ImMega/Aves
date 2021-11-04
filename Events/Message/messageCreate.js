@@ -6,7 +6,7 @@ module.exports = async (client, message) => {
     const args = message.content.slice(client.prefix.length).split(/ +/);
     const command = args.shift();
 
-    const cmd = client.commands.get(command);
+    const cmd = client.commands.get(command) || client.commands.get(client.cmdA.get(command));
 
     let profile;
     try {
