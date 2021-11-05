@@ -3,6 +3,8 @@ const { player } = require("../../main");
 module.exports = {
     name: "skip",
     aliases: [],
+    description: "Skips the song",
+    usage: "skip",
     execute(message, args){
         if(!message.member.voice.channel) return message.reply({ content: "You need to be in a VC to use music commands", allowedMentions: { repliedUser: false } });
 

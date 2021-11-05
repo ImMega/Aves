@@ -4,6 +4,8 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "remove",
     aliases: ["r"],
+    description: "Removes a song from the queue",
+    usage: "remove",
     execute(message, args){
         if(!message.member.voice.channel) return message.reply({ content: "You need to be in a VC to use music commands", allowedMentions: { repliedUser: false } });
 

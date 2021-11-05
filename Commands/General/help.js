@@ -4,6 +4,8 @@ const { client } = require("../../main");
 module.exports = {
     name: 'help',
     aliases: [],
+    description: "Shows the command list or info about a specific command",
+    usage: "help [command]",
     async execute(message, args){
         const clcolor = message.guild.members.cache.get(client.user.id).displayHexColor;
         
@@ -28,7 +30,8 @@ module.exports = {
                     new MessageEmbed()
                     .setColor(clcolor)
                     .setTitle(client.prefix + cmd.name)
-                    .setDescription(`${cmd.aliases.length !== 0 ? `**Aliases:** \`${cmd.aliases.join(", ")}\`\n\n` : ` `}`
+                    .setDescription(`${cmd.description}\n`
+                    + `${cmd.aliases.length !== 0 ? `**Aliases:** \`${cmd.aliases.join(", ")}\`\n\n` : ` `}`
                     + `**Usage**\n\`${cmd.usage}\`\n\n`
                     + `${cmd.details ? `**Details**\n ${cmd.details}\n\n` : ` `}`
                     + `${cmd.permissions.length !== 0 ? `**Permissions:** \`${cmd.permissions.join(", ")}\`` : ``}`)

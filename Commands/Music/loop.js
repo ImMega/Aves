@@ -4,6 +4,8 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "loop",
     aliases: ["repeat"],
+    description: "Toggles or sets the loop mode",
+    usage: "loop [song, queue or off]",
     execute(message, args){
         if(!message.member.voice.channel) return message.reply({ content: "You need to be in a VC to use music commands", allowedMentions: { repliedUser: false } });
 

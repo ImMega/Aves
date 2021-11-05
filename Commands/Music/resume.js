@@ -3,6 +3,8 @@ const { player } = require("../../main");
 module.exports = {
     name: "resume",
     aliases: [],
+    description: "Resumes the paused song",
+    usage: "resume",
     execute(message, args){
         if(!message.member.voice.channel) return message.reply({ content: "You need to be in a VC to use music commands", allowedMentions: { repliedUser: false } });
 

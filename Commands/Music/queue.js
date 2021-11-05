@@ -2,7 +2,9 @@ const { player } = require("../../main");
 
 module.exports = {
     name: "queue",
-    aliases: ["queue"],
+    aliases: ["q"],
+    description: "Shows the current queue",
+    usage: "queue",
     execute(message, args){
         if(!message.member.voice.channel) return message.reply({ content: "You need to be in a VC to use music commands", allowedMentions: { repliedUser: false } });
 
