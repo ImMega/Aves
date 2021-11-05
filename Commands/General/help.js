@@ -30,7 +30,7 @@ module.exports = {
                     new MessageEmbed()
                     .setColor(clcolor)
                     .setTitle(client.prefix + cmd.name)
-                    .setDescription(`${cmd.description}\n`
+                    .setDescription(`${cmd.description}\n\n`
                     + `${cmd.aliases.length !== 0 ? `**Aliases:** \`${cmd.aliases.join(", ")}\`\n\n` : ` `}`
                     + `**Usage**\n\`${cmd.usage}\`\n\n`
                     + `${cmd.details ? `**Details**\n ${cmd.details}\n\n` : ` `}`
