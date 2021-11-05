@@ -15,6 +15,6 @@ module.exports = async (flag) => {
     } else if(mania){
         mode = 3;
     }
-console.log(mode)
+
     return mode;
 }

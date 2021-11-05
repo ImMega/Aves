@@ -1,5 +1,4 @@
 module.exports = async (score) => {
-    console.log(score);
     let mods = score.mods.join("");
     let pp = score.pp;
 
