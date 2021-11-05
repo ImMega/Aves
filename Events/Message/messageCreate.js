@@ -1,7 +1,7 @@
 const profileModel = require("../../Models/profileSchema");
 
 module.exports = async (client, message) => {
-    if(!message.content.startsWith(client.prefix)) return;
+    if(!message.content.startsWith(client.prefix) || message.author.bot) return;
 
     const args = message.content.slice(client.prefix.length).split(/ +/);
     const command = args.shift();
