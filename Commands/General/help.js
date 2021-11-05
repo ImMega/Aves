@@ -34,7 +34,7 @@ module.exports = {
                     + `${cmd.aliases.length !== 0 ? `**Aliases:** \`${cmd.aliases.join(", ")}\`\n\n` : ` `}`
                     + `**Usage**\n\`${cmd.usage}\`\n\n`
                     + `${cmd.details ? `**Details**\n ${cmd.details}\n\n` : ` `}`
-                    + `${cmd.permissions.length !== 0 ? `**Permissions:** \`${cmd.permissions.join(", ")}\`` : ``}`)
+                    + `${cmd.permissions ? `**Permissions:** \`${cmd.permissions.join(", ")}\`` : ``}`)
                 ]
             })
         }
