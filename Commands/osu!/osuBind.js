@@ -5,7 +5,7 @@ module.exports = {
     name: "osubind",
     aliases: [],
     description: "Binds an osu! account",
-    usage: "resume",
+    usage: "osubind",
     async execute(message, args){
         const username = args.join(" ");
         osu.getUser({ u: username }).then(async (user) => {

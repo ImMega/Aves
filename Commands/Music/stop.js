@@ -4,7 +4,7 @@ module.exports = {
     name: "stop",
     aliases: ["leave"],
     description: "Stops the queue if any and leaves",
-    usage: "resume",
+    usage: "stop",
     execute(message, args){
         if(!message.member.voice.channel) return message.reply({ content: "You need to be in a VC to use music commands", allowedMentions: { repliedUser: false } });
 

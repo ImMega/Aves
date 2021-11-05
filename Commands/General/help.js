@@ -13,7 +13,8 @@ module.exports = {
             const embed = new MessageEmbed()
                         .setColor(clcolor)
                         .setTitle(`${client.user.username} Command List`)
-                        .setDescription(`DM or ping <@470277450551656459> if anything goes wrong`)
+                        .setDescription(`To se more info about a specific command user \`${client.prefix}help [command]\`\n\n`
+                                    + `DM or ping <@470277450551656459> if anything goes wrong`)
                         .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
                         .setFooter(`${client.user.username} Command List`, client.user.displayAvatarURL({ dynamic: true }))
 
