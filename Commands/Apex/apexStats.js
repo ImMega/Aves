@@ -14,13 +14,15 @@ const xbl = ["xbox", "xbl", "x1", "xboxone", "seriesx", "xsx"];
 module.exports = {
     name: "apexstats",
     aliases: [],
+    description: "Shows stats for an Apex account (for Steam accounts you need to enter Origin username linked to that Steam account)",
+    usage: "apexstats [platform] [username]",
     async execute(message, args, profileData){
         if(!args[0]){
-            if(profileData.apexName === "noAccLinked") return message.reply({ content: `You need to enter an Apex username or bind your account with \`${client.prefix + require("./apexBind").name}\``});
+            if(profileData.apexName === "noAccLinked") return message.reply({ content: `You need to enter an Apex username or bind your account with \`${client.prefix}apexbind\``});
 
             const profile = await this.profileFind(profileData.apexName, profileData.apexPlatform);
 
-            const embed = await this.embedCreate(message, profile);
+            const embed = await this.embedBuild(message, profile);
 
             message.channel.send({ embeds: [embed] })
         } else {
@@ -33,7 +35,7 @@ module.exports = {
 
                 const profile = await this.profileFind(memberData.apexName, memberData.apexPlatform);
 
-                const embed = await this.embedCreate(message, profile);
+                const embed = await this.embedBuild(message, profile);
 
                 message.channel.send({ embeds: [embed] })
             } else {
@@ -48,14 +50,14 @@ module.exports = {
 
                 const profile = await this.profileFind(username, platform);
 
-                const embed = await this.embedCreate(message, profile);
+                const embed = await this.embedBuild(message, profile);
 
                 message.channel.send({ embeds: [embed] });
             }
         }
     },
 
-    async embedCreate(message, profile){
+    async embedBuild(message, profile){
         const embed = new MessageEmbed()
             .setColor(message.guild.members.cache.get(client.user.id).displayHexColor)
             .setTitle(profile.name)
@@ -109,6 +111,9 @@ module.exports = {
                 currentLegend: currentLegend,
                 legendDisplayValues: legendDisplayValues
             }
+        })
+        .catch((err) => {
+            console.log(err);
         })
     }
 }

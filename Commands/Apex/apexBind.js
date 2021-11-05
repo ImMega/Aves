@@ -12,6 +12,8 @@ const xbl = ["xbox", "xbl", "x1", "xboxone", "seriesx", "xsx"];
 module.exports = {
     name: "apexbind",
     aliases: [],
+    description: "Binds an Apex account (for Steam accounts you need to enter Origin username linked to that Steam account)",
+    usage: "apexbind <platform> <username>",
     async execute(message, args){
         if(!args[0] || !args[1]) return message.reply({ content: "You need to provide both username and platform", allowedMentions: { repliedUser: false } });
 
