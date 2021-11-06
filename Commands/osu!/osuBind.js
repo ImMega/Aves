@@ -20,7 +20,7 @@ module.exports = {
 
             const profileBinded = await profileModel.findOne({ osuID: user.id });
 
-            if(profileBinded) return message.reply({ content: `**${user.name}** is already binded to an account!` });
+            if(profileBinded) return message.reply({ content: `**${user.name}** is already binded to an account!`, allowedMentions: { repliedUser: false } });
 
             const response = await profileModel.findOneAndUpdate({
                 userID: message.author.id
