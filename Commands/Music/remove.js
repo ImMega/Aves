@@ -27,7 +27,7 @@ module.exports = {
             embeds: [
                 new MessageEmbed()
                 .setColor(message.channel.guild.members.cache.get(message.author.id).displayHexColor)
-                .setTitle("Maknuto iz Queuea")
+                .setTitle("Removed from Queue")
                 .setDescription(`[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
                 .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 .setThumbnail(song.thumbnail)

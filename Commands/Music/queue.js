@@ -19,7 +19,7 @@ module.exports = {
             return `[${i + 1}] ${e.name} - ${e.formattedDuration} ${i === 0 ? "--- [Now Playing]" : ""}`
         });
 
-        message.channel.send(`\`\`\`ini\n${songs.slice(0, 8).join("\n")}\`\`\``)
+        message.channel.send(`\`\`\`ini\n${songs.length !== 0 ? songs.slice(0, 8).join("\n") : `[There is nothing in queue]`}\`\`\``)
         .then(async (msg) => {
             await msg.react("⏮️");
             await msg.react("⏭️");
