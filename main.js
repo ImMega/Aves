@@ -17,7 +17,8 @@ const player = new DisTube.default(client, {
     emptyCooldown: 600000,
     leaveOnFinish: false,
     leaveOnStop: false,
-    plugins: [new SpotifyPlugin.default()]
+    plugins: [new SpotifyPlugin.default()],
+    nsfw: true
 });
 
 const osu = new Api(process.env.OSU_API_KEY, {
