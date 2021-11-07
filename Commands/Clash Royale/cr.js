@@ -1,4 +1,6 @@
-const { cr, client } = require("../../main");
+const { client } = require("../../main");
+const { ClashRoyaleAPI } = require("@varandas/clash-royale-api")
+const cr = new ClashRoyaleAPI(process.env.CLASH_ROYALE_TOKEN);
 const { MessageEmbed } = require("discord.js");
 const profileModel = require("../../Models/profileSchema");
 
