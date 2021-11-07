@@ -19,8 +19,7 @@ module.exports = async (client, message) => {
                 apexName: `noAccLinked`,
                 apexPlatform: `noAccLinked`,
                 osuID: `noAccLinked`,
-                osuMode: 0,
-                crTag: `noAccLinked`
+                osuMode: 0
             });
             profile.save();
         }

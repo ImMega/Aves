@@ -6,8 +6,7 @@ const profileSchema = new mongoose.Schema({
     apexName: {type: String},
     apexPlatform: {type: String},
     osuID: {type: String},
-    osuMode: {type: Number},
-    crTag: {type: String}
+    osuMode: {type: Number}
 });
 
 const model = mongoose.model("ProfileModels", profileSchema);
