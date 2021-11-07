@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const DisTube = require("distube");
 const SpotifyPlugin = require("@distube/spotify");
 const { Api } = require("node-osu");
+const { ClashRoyaleAPI } = require("@varandas/clash-royale-api");
 
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MEMBERS]
@@ -27,9 +28,11 @@ const osu = new Api(process.env.OSU_API_KEY, {
     parseNumeric: false
 });
 
+const cr = new ClashRoyaleAPI(process.env.CLASH_ROYALE_TOKEN);
+
 client.prefix = "."
 
-module.exports = {client, player, osu}
+module.exports = {client, player, osu, cr}
 
 const handlers = fs.readdirSync("./Handlers/").filter(file => file.endsWith(".js"));
 
