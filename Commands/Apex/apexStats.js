@@ -14,7 +14,7 @@ const xbl = ["xbox", "xbl", "x1", "xboxone", "seriesx", "xsx"];
 module.exports = {
     name: "apexstats",
     aliases: [],
-    description: "Shows stats for an Apex account (for Steam accounts you need to enter Origin username linked to that Steam account)",
+    description: "Shows stats for an Apex account stats (for Steam accounts you need to enter Origin username linked to that Steam account)",
     usage: "apexstats [platform] [username]",
     async execute(message, args, profileData){
         if(!args[0]){

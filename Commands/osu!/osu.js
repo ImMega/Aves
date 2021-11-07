@@ -6,7 +6,7 @@ const osuH = require("../../Helpers/osuHelper");
 module.exports = {
     name: "osu",
     aliases: [],
-    description: "Shows an osu! account",
+    description: "Shows an osu! account stats",
     usage: "osu [username] [osu! game mode]",
     async execute(message, args, profileData){
         if(!args[0] && profileData.osuID === "noAccLinked") return message.reply({ content: `You need to enter the user you want to check or bind an account using \`${client.prefix}osubind\``, allowedMentions: { repliedUser: false } });
